@@ -5,6 +5,9 @@
 
 :root {
     --primary: red;
+    --secondary: white;
+    --third: gray;
+    --third-light: rgb(207, 207, 207);
     --margin-section: 10px;
     --width-section: 68em;
     --font-family-primary: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -21,6 +24,12 @@
         margin: var(--margin-section) 0 var(--margin-section) 0;
         padding: var(--margin-section) 5px var(--margin-section) 5px;
         border: 1px solid var(--primary);
+    }
+
+    #page header > *,
+    #page main > *,
+    #page footer > * {
+        padding: 10px;
     }
 
 #social-network,
@@ -74,14 +83,19 @@
     background-size: cover;
 }
 
-    .sub-menu {
-        visibility: hidden;
+    #menu ul.sub-menu {
+        display: none;
+    }
+
+    #menu li:hover > #menu ul.sub-menu {
+        display: flex;
+        flex-direction: column;
     }
 
     #menu nav {
         width: 100%;
-        border-top: 1px solid gray;
-        border-bottom: 1px solid gray;
+        border-top: 1px solid var(--third);
+        border-bottom: 1px solid var(--third);
     }
 
     #menu  ul {
@@ -117,11 +131,114 @@
     }
 
         #primary-title h1 {
-            color: red;
+            color: var(--primary);
             font-size: 8em;
             font-family: var(--font-family-primary);
         }
 
+h2 {
+    font-size: 4em;
+    text-transform:uppercase;
+    background-color: var(--third);
+    color: var(--secondary);
+    padding: 10px 40px 10px 40px;
+    margin-bottom: 40px;
+}
+
+h3::before {
+    content: url(assets/images/puce_of_rg.png);
+    width: 10px;
+    height: 10px;
+}
+h3 {
+    color: var(--primary);
+    font-size: 2em;
+    border-bottom: 4px solid var(--primary);
+    margin: 20px 0 20px 0px;
+}
+
+h4 {
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: var(--third-light);
+    width: 100%;
+    padding: 5px 20px 5px 20px;
+    margin: 20px 0px 20px 0;
+    font-style: oblique;
+}
+
+    .first-letter > p::first-letter {
+        font-weight: bolder;
+        font-size: 3em;
+    }
     
+.article-position-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; 
+}
+    .article-position-center p {
+        margin: 5px;
+    }
+
+    .img-background-color {
+        background-color: var(--third-light);
+        width: 640px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .img-background-color figcaption {
+            font-style: oblique;
+            font-weight: bold;
+        }
+
+.un-reve-de-gosse {
+    background-color: var(--primary);
+    border-radius: 50px 0 0 0;
+    color: var(--secondary);
+    margin: 20px 30px 20px 30px;
+    padding: 40px;
+}
+    .un-reve-de-gosse div {
+        width: max-content;
+
+    }
+    .un-reve-de-gosse h4 {
+        background-color: var(--primary);
+        border-top: solid 4px var(--secondary);
+        border-bottom: solid 4px var(--secondary);
+        word-spacing: 20px;
+    }
+
+    .background-red {
+        background-color: var(--primary);
+    }
+
+    .background-white {
+        background-color: var(--secondary);
+    }
+
+    .margin-around {
+        margin: 10px;
+    }
+
+    .padding-top-bottom {
+        padding: 10px 0px 10px 0px;
+    }
+
+    .width-80 {
+        width: 80%;
+    }
+
+
+    .text-color-red {
+        color: var(--primary);
+    }
   
        
