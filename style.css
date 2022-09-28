@@ -14,7 +14,8 @@
     --first-letter-title-fourth: 1.8em;
     --margin-section: 10px;
     --width-section: 68em;
-    --font-family-primary: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --font-family-primary: 'Trebuchet MS', 'Helvetica', sans-serif;
+    --font-family-secondary: 'Helvetica', sans-serif;
 }
 
 #page {
@@ -96,14 +97,39 @@
     background-size: cover;
 }
 
-    #menu ul.sub-menu {
+    #menu li ul.sub-menu {
         display: none;
     }
 
-    #menu li:hover > #menu ul.sub-menu {
-        display: flex;
-        flex-direction: column;
+    #menu li:hover ul.sub-menu {
+        display: block;
     }
+
+        #menu li ul.sub-menu li:hover {
+            background-color: var(--primary);
+        }
+
+        #menu li ul.sub-menu li:hover a {
+            background-color: var(--primary);
+            color: var(--secondary);
+        }
+
+        #menu li ul.sub-menu li:hover a::before {
+            content: url(assets/images/puce_of_n&b.png);
+            width: 32px;
+            height: 32px;
+        }
+
+        #menu li ul.sub-menu li a {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        #menu li ul.sub-menu li a::before {
+            content: url(assets/images/puce_of_rg.png);
+            width: 10px;
+            height: 10px;
+        }
 
     #menu nav {
         width: 100%;
@@ -138,13 +164,6 @@
         #menu  ul li a:hover {
             text-decoration: underline;
             color: var(--primary);
-        }
-
-        #menu  ul li a:hover:before {
-            content: url(/assets/images/puce_of_rg.png);
-            width: 10px;
-            height: 10px;
-            padding: 5px;
         }
 
     #primary-title {
@@ -222,34 +241,43 @@ h4 {
 
 .un-reve-de-gosse {
     background-color: var(--primary);
-    border-radius: 50px 0 0 0;
+    border-radius: 50px 0 50px 0;
     color: var(--secondary);
     margin: 20px 30px 20px 30px;
     padding: 40px;
+    font-family: var(--font-family-secondary);
 }
  
     #floating-img-1 {
-        float: left;
-        width: 66%;
-        margin-right: 200px;
+        text-align: left;
+        top: 50px;
         position: relative;
-        z-index: 3;
-    }
-
-    #floating-img-2 {
-        float: right;
-        margin-top: -50px;
-        margin-right: -50px;
         z-index: 2;
     }
 
-    #floating-img-3 {
-        float: right;
-        margin-top: -50px;
-        margin-right: -150px;
+    #floating-img-2 {
+        text-align: center;
+        position: relative;
         z-index: 1;
     }
 
+    #floating-img-3 {
+        text-align: right;
+        top: -50px;
+        position: relative;
+    }
+
+    #img-float-right  {
+        float: right;
+        margin: 0px 0px 15px 15px;
+    }
+
+    .overflow {
+        overflow: hidden;
+        width: 60%;
+        height: 400px;
+        margin: 0 auto;
+    }
 
     .un-reve-de-gosse h4 {
         background-color: var(--primary);
@@ -284,6 +312,10 @@ h4 {
         margin: 10px;
     }
 
+    .center {
+        margin: 0 auto;
+    }
+
     .padding-top-bottom {
         padding-top: 10px;
         padding-bottom: 10px
@@ -295,6 +327,14 @@ h4 {
 
     .width-80 {
         width: 80%;
+    }
+
+    .width-70 {
+        width: 70%;
+    }
+
+    .width-max-content {
+        width:max-content;
     }
 
     .text-color-white {
